@@ -1,5 +1,5 @@
 {
-  "name": "@wsv/multitool",
+  "name": "@wvp/multitool",
   "version": "0.0.1",
   "description": "Workshop MultiTool - CLI for everything",
   "main": "index.js",

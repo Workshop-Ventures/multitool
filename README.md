@@ -8,7 +8,7 @@ Multitool is a collection of tools to help automate tasks and make development p
 There are various tools, each with their own set of commands.
 
 ```bash
-npm i -g @wsv/multitool
+npm i -g @wvp/multitool
 # OR DOWNLOAD LOCALLY AND run npm link in the short term
 
 multitool help
