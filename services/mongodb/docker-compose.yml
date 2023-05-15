@@ -1,0 +1,20 @@
+version: '3'
+services:
+  mongodb:
+    image: mongo:5.0.5
+    container_name: mongodb
+    hostname: mongodb
+    labels:
+      SERVICE_ADDRESS: 172.0.0.1
+      SERVICE_TAGS: mongodb
+      SERVICE_NAME: mongo
+      SERVICE_ID: mongo
+    ports:
+      - "27017:27017"
+    networks:
+      - local_default
+
+networks: 
+  local_default:
+    external:
+      name: local_default

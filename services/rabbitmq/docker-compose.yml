@@ -1,0 +1,26 @@
+version: '3'
+services:
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: rabbitmq
+    hostname: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    labels:
+      SERVICE_ADDRESS: 172.0.0.1
+      SERVICE_5672_TAGS: rabbitmq
+      SERVICE_5672_NAME: rabbitmq
+      SERVICE_5672_ID: rabbitmq
+      SERVICE_5671_IGNORE: true
+      SERVICE_15671_IGNORE: true
+      SERVICE_25672_IGNORE: true
+      SERVICE_15672_IGNORE: true
+      SERVICE_4369_IGNORE: true
+    networks:
+      - local_default
+
+networks: 
+  local_default:
+    external:
+      name: local_default

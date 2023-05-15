@@ -1,0 +1,26 @@
+version: '3'
+services:
+  mariadb:
+    image: mariadb:10.10
+    container_name: mariadb
+    hostname: mariadb
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_DATABASE: 'test'
+      MYSQL_USER: 'root'
+      MYSQL_PASSWORD: ''
+      MYSQL_MODES: ''
+    labels:
+      SERVICE_ADDRESS: 172.0.0.1
+      SERVICE_TAGS: mysql
+      SERVICE_NAME: mysql
+      SERVICE_ID: mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - local_default
+
+networks: 
+  local_default:
+    external:
+      name: local_default

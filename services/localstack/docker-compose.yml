@@ -1,0 +1,22 @@
+version: '3'
+services:
+  localstack:
+    image: localstack/localstack
+    container_name: localstack
+    hostname: localstack
+    environment:
+      - DOCKER_HOST=unix:///var/run/docker.sock
+    volumes:
+      - "/var/lib/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    ports:
+      - "4566:4566"
+    labels:
+      SERVICE_IGNORE: true
+    networks:
+      - local_default
+
+networks: 
+  local_default:
+    external:
+      name: local_default

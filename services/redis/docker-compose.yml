@@ -1,0 +1,22 @@
+version: '3'
+services:
+  redis:
+    image: redis:6.0-alpine
+    container_name: redis
+    hostname: redis
+    command: ["redis-server", "--appendonly", "yes"]
+    labels:
+      SERVICE_ADDRESS: 172.0.0.1
+      SERVICE_TAGS: redis
+      SERVICE_NAME: redis
+      SERVICE_ID: redis
+    ports:
+      - "6379:6379"
+    restart: always
+    networks:
+      - local_default
+
+networks: 
+  local_default:
+    external:
+      name: local_default
