@@ -24,5 +24,4 @@ networks:
 volumes:
   mongodb_data:
     name: mongodb_data
-    external: true
 
