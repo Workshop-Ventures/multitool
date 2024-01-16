@@ -19,8 +19,14 @@ services:
       - "3306:3306"
     networks:
       - local_default
+    volumes:
+      - mariadb_data:/var/lib/mysql
 
 networks: 
   local_default:
     external:
       name: local_default
+
+volumes:
+  mariadb_data:
+    driver: local
