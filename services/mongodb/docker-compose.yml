@@ -13,8 +13,15 @@ services:
       - "27017:27017"
     networks:
       - local_default
+    volumes:
+      - mongodb_data:/data/db
 
 networks: 
   local_default:
     name: local_default
     external: true
+
+volumes:
+  mongodb_data:
+    name: mongodb_data
+
