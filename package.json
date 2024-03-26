@@ -12,7 +12,8 @@
     "depcheck:local": "madge src/cli.ts --circular",
     "lint": "eslint --config .eslintrc.js src/ --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint --config .eslintrc.js src/ --ext .js,.jsx,.ts,.tsx --fix",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "npm build"
   },
   "author": "Jason C",
   "license": "ISC",
