@@ -1,0 +1,27 @@
+version: '3'
+services:
+  atlas:
+    image: mongodb/mongodb-atlas-local:latest
+    container_name: atlas
+    hostname: atlas
+    labels:
+      SERVICE_ADDRESS: 172.0.0.1
+      SERVICE_TAGS: atlas
+      SERVICE_NAME: atlas
+      SERVICE_ID: atlas
+    ports:
+      - "27017:27017"
+    networks:
+      - local_default
+    volumes:
+      - mongodb_config:/data/configdb
+      - mongodb_data:/data/db
+
+networks: 
+  local_default:
+    name: local_default
+    external: true
+
+volumes:
+  mongodb_data:
+  mongodb_config:

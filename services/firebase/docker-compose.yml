@@ -1,0 +1,20 @@
+services:
+  firebase:
+    container_name: firebase
+    image: spine3/firebase-emulator
+    ports:
+      - '9000:9000' # RDB
+      - '9099:9099' # Authentication
+      - '8085:8085' # Pub/Sub
+      - '4000:4000' # UI
+    environment:
+      - AUTH_EMULATOR_PORT=9099
+      - GCP_PROJECT=workhero-local
+      - ENABLE_UI=true
+      - UI_EMULATOR_PORT=4000
+    volumes:
+      - ./firebase.json:/firebase/firebase.json
+networks: 
+  local_default:
+    name: local_default
+    external: true
