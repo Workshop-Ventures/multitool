@@ -2,10 +2,17 @@
   "name": "@wvp/multitool",
   "version": "0.0.1",
   "description": "Workshop MultiTool - CLI for everything",
-  "main": "index.js",
+  "main": "dist/cli.js",
   "bin": {
     "multitool": "bin/multitool",
     "mt": "bin/multitool"
+  },
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "build": "npx tsc",
@@ -13,7 +20,7 @@
     "lint": "eslint --config .eslintrc.js src/ --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint --config .eslintrc.js src/ --ext .js,.jsx,.ts,.tsx --fix",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "npm run build"
+    "prepare": "npm run build"
   },
   "author": "Jason C",
   "license": "ISC",
