@@ -1,6 +1,6 @@
 {
   "name": "@wvp/multitool",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Workshop MultiTool - CLI for everything",
   "main": "dist/cli.js",
   "bin": {
